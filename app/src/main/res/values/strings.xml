@@ -1,0 +1,38 @@
+<resources>
+    <string name="app_name">Overflow</string>
+
+    <!-- Heure et meteo -->
+    <string name="real_timer">10:10</string>
+    <string name="real_weather">Rain</string>
+
+    <!-- Menu -->
+    <string name="menu_title">OVERFLOW</string>
+
+
+    <!-- Item -->
+    <string name="item_name">Nom du produit</string>
+    <string name="item_description">Description du produit</string>
+    <string name="item_price">Prix du produit</string>
+
+
+    <!-- Item Select-->
+    <string name="item_select_name">Nom du produit</string>
+    <string name="item_select_description">Description du produit</string>
+    <string name="item_select_price">Prix du produit</string>
+
+    <!-- Login -->
+    <string name="login_title">Login</string>
+    <string name="login_input_username">Username</string>
+    <string name="login_input_password">Password</string>
+    <string name="login_button">Login</string>
+
+    <!-- Sign Up -->
+    <string name="signup_title">Sign Up</string>
+    <string name="signup_input_username">@string/login_input_username</string>
+    <string name="signup_input_firstname">First Name</string>
+    <string name="signup_input_lastname">Last Name</string>
+    <string name="signup_input_email">Email</string>
+    <string name="signup_input_password">@string/login_input_password</string>
+    <string name="signup_input_confirm_password">Confirm your Password</string>
+    <string name="signup_button">Sign Up</string>
+</resources>

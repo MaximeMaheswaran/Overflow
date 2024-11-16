@@ -1,0 +1,49 @@
+{
+  "project_info": {
+    "project_number": "118401056974",
+    "firebase_url": "https://overflow-341a5-default-rtdb.firebaseio.com",
+    "project_id": "overflow-341a5",
+    "storage_bucket": "overflow-341a5.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:118401056974:android:fb8dedf6f99797b546109f",
+        "android_client_info": {
+          "package_name": "com.example.basicui_demo"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBTpFR3mGEYL8tuNfNcIZ4VfOxMP-97BPQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:118401056974:android:4db1ab362b4e543a46109f",
+        "android_client_info": {
+          "package_name": "fr.max.overflow"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBTpFR3mGEYL8tuNfNcIZ4VfOxMP-97BPQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

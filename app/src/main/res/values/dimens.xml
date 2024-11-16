@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="margin_timer_weather_top">50dp</dimen>
+    <dimen name="item_width">344dp</dimen>
+
+
+</resources>
