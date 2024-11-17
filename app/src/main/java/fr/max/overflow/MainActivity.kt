@@ -8,6 +8,7 @@ import androidx.core.view.WindowInsetsCompat
 import fr.max.overflow.fragments.HomeFragment
 
 class MainActivity : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -18,7 +19,6 @@ class MainActivity : AppCompatActivity() {
             insets
 
         }*/
-
         /*//charger les items
         val repo = ItemRepository()
 
@@ -29,6 +29,7 @@ class MainActivity : AppCompatActivity() {
             transaction.replace(R.id.fragment_container_home, HomeFragment(this))
             transaction.addToBackStack(null)
             transaction.commit()
+            println("test")
         }*/
 
         //injecter le fragment dans la boite (fragment_container_home)

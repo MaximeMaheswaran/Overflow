@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
 import fr.max.overflow.ItemModel
+import fr.max.overflow.ItemRepository.Singleton.itemsList
 import fr.max.overflow.MainActivity
 import fr.max.overflow.R
 import fr.max.overflow.adapter.ItemAdapter

@@ -16,8 +16,12 @@
 
 
     <!-- Item Select-->
+    <string name="item_title_description">Description</string>
+    <string name="item_title_price">Prix</string>
+    <string name="item_title_quantity">Quantite</string>
     <string name="item_select_name">Nom du produit</string>
     <string name="item_select_description">Description du produit</string>
+    <string name="item_select_quantity">Quantite</string>
     <string name="item_select_price">Prix du produit</string>
 
     <!-- Login -->
@@ -35,4 +39,6 @@
     <string name="signup_input_password">@string/login_input_password</string>
     <string name="signup_input_confirm_password">Confirm your Password</string>
     <string name="signup_button">Sign Up</string>
+    <string name="back_arrow">Back</string>
+    <string name="add_to_basket">Add to basket</string>
 </resources>

@@ -1,4 +1,6 @@
 package fr.max.overflow
+import android.content.ContentValues.TAG
+import android.util.Log
 import androidx.recyclerview.widget.AsyncListUtil.DataCallback
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
@@ -32,6 +34,7 @@ class ItemRepository {
                     val item = element.getValue(ItemModel::class.java)
                     if (item != null) {
                         itemsList.add(item)
+
                     }
                 }
                 //actionner le callback
@@ -40,6 +43,7 @@ class ItemRepository {
 
             override fun onCancelled(error: DatabaseError) {
                 TODO("Not yet implemented")
+
             }
         })
     }

@@ -3,6 +3,8 @@
 
     <dimen name="margin_timer_weather_top">50dp</dimen>
     <dimen name="item_width">334dp</dimen>
+    <dimen name="popup_margin_default">20dp</dimen>
+    <dimen name="nav_bar_height">80dp</dimen>
 
 
 </resources>
