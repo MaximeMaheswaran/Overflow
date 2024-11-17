@@ -12,6 +12,6 @@ class ItemsDecorations : RecyclerView.ItemDecoration() {
         parent: RecyclerView,
         state: RecyclerView.State
     ) {
-        outRect.bottom = 100
+        outRect.bottom = 200
     }
 }

@@ -2,7 +2,7 @@
 <resources>
 
     <dimen name="margin_timer_weather_top">50dp</dimen>
-    <dimen name="item_width">344dp</dimen>
+    <dimen name="item_width">334dp</dimen>
 
 
 </resources>

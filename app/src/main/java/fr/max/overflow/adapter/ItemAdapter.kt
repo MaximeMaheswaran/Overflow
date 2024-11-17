@@ -1,5 +1,6 @@
 package fr.max.overflow.adapter
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -31,15 +32,21 @@ class ItemAdapter(private val context : MainActivity, private val unItemsList: L
         return unItemsList.size
     }
 
+    @SuppressLint("DiscouragedApi")
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         //mettre a jour les information de l'item
         val currentItem = unItemsList[position]
 
+
+        // Convertir le nom de l'image en identifiant de ressource
+        val imageResId = context.resources.getIdentifier(currentItem.imageId, "drawable", context.packageName)
         //mettre a jour l'image
-        holder.itemImage?.setImageResource(R.drawable.calvin_klein_black_01)
+        holder.itemImage?.setImageResource(imageResId)
         //mettre a jour le nom et la description du produit
         holder.itemName.text = currentItem.name
         holder.itemDescription.text = currentItem.description
+
+        //ecouter les items
 
     }
 }

@@ -11,8 +11,8 @@ class ItemRepository {
 
     object Singleton {
 
-        //se connecter a la reference "item"
-        val databaseRef = FirebaseDatabase.getInstance().getReference("item")
+        //se connecter a la reference "Items"
+        val databaseRef = FirebaseDatabase.getInstance().getReference("Items")
 
         // creer une liste qui va contenire les items
         val itemsList = arrayListOf<ItemModel>()
