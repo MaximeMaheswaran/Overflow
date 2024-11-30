@@ -7,6 +7,9 @@
 
     <!-- Menu -->
     <string name="menu_title">OVERFLOW</string>
+    <string name="menu_home">Home</string>
+    <string name="menu_basket">Basket</string>
+    <string name="menu_user">User</string>
 
 
     <!-- Item -->

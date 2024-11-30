@@ -3,6 +3,8 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="marron">#2C2525</color>
+    <color name="marron_claire">#3A3131</color>
+    <color name="marron_semi_claire">#312929</color>
     <color name="dark_marron">#D9D9D9</color>
     <color name="Gris">#96DCDCDC</color>
 </resources>

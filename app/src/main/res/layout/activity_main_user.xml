@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivityUser"
+    android:background="@color/marron_claire">
+
+
+    <FrameLayout
+        android:id="@+id/frameLayout_top"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="@color/marron"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/id_app_timer"
+            style="@style/time_weather_text_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="170dp"
+            android:layout_marginTop="@dimen/margin_timer_weather_top"
+            android:gravity="center"
+            android:text="@string/real_timer"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <TextView
+            android:id="@+id/id_app_weather"
+            style="@style/time_weather_text_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="320dp"
+            android:layout_marginTop="@dimen/margin_timer_weather_top"
+            android:text="@string/real_weather" />
+
+    </FrameLayout>
+
+
+    <FrameLayout
+        android:layout_width="300dp"
+        android:layout_height="350dp"
+        android:backgroundTint="@color/marron_claire"
+        app:cardCornerRadius="25dp"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/frameLayout_top">
+
+        <TextView
+            style="@style/signin_login_text_style"
+            android:layout_width="match_parent"
+            android:layout_height="77dp"
+            android:background="@color/marron_semi_claire"
+            android:gravity="center"
+            android:text="@string/login_title" />
+
+        <EditText
+            android:id="@+id/textinput_login_id"
+            android:inputType="textPersonName"
+            android:layout_width="250dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="110dp"
+            android:backgroundTint="@color/white"
+            android:hint="@string/login_input_username"
+            android:textColor="@color/white"
+            android:textColorHint="@color/Gris" />
+
+
+        <EditText
+            android:id="@+id/textinput_login_password"
+            android:inputType="textPassword"
+            android:layout_width="250dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="180dp"
+            android:backgroundTint="@color/white"
+            android:hint="@string/login_input_password"
+            android:textColor="@color/white"
+            android:textColorHint="@color/Gris" />
+
+
+        <Button
+            android:id="@+id/login_button"
+            style="@style/add_to_basket_button"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="52dp"
+            android:layout_marginTop="280dp"
+            android:backgroundTint="@color/marron"
+            android:text="@string/login_title" />
+
+
+    </FrameLayout>
+
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationView"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="@color/marron"
+        android:outlineAmbientShadowColor="@color/black"
+        app:itemTextColor="@drawable/bottom_nav_color"
+        android:layout_marginTop="40dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/bottom_nav_bar" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

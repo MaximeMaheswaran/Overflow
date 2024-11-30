@@ -2,7 +2,6 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    android:background="@color/Gris"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -11,8 +10,7 @@
         android:id="@+id/vertical_recycler_view"
         android:layout_gravity="center"
         android:layout_width="334dp"
-        android:layout_height="match_parent"
-        android:paddingBottom="@dimen/nav_bar_height"
+        android:layout_height="695dp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         android:orientation="vertical"
         />

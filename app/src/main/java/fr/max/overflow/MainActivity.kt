@@ -1,10 +1,12 @@
 package fr.max.overflow
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import fr.max.overflow.fragments.HomeFragment
 
 class MainActivity : AppCompatActivity() {
@@ -37,6 +39,36 @@ class MainActivity : AppCompatActivity() {
         transaction.replace(R.id.fragment_container_home, HomeFragment(this))
         transaction.addToBackStack(null)
         transaction.commit()
+
+
+
+        // Ecouter la bar de navigation
+
+        val navBar = findViewById<BottomNavigationView>(R.id.bottomNavigationView)
+        navBar.setOnItemSelectedListener {
+            when (it.itemId) {
+
+                R.id.action_nav_home -> {
+                    val transaction = supportFragmentManager.beginTransaction()
+                    transaction.replace(R.id.fragment_container_home, HomeFragment(this))
+                    transaction.addToBackStack(null)
+                    transaction.commit()
+                    return@setOnItemSelectedListener true
+                }
+
+                R.id.action_nav_user ->{
+                    onStop()
+                    val intent = Intent(this, MainActivityUser::class.java)
+                    startActivity(intent)
+                    return@setOnItemSelectedListener true
+                }
+
+                else -> {
+                    return@setOnItemSelectedListener false
+                }
+            }
+
+        }
 
     }
 }

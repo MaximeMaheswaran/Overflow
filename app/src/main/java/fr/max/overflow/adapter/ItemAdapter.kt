@@ -12,7 +12,6 @@ import androidx.recyclerview.widget.RecyclerView
 import fr.max.overflow.ItemModel
 import fr.max.overflow.ItemPopup
 import fr.max.overflow.MainActivity
-import fr.max.overflow.MainActivityItem
 import fr.max.overflow.R
 
 class ItemAdapter(val context : MainActivity, private val unItemsList: List<ItemModel>, private val unLayoutId: Int) : RecyclerView.Adapter<ItemAdapter.ViewHolder>(){
