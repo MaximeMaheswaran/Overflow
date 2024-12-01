@@ -9,8 +9,10 @@ import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.lifecycleScope
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import fr.max.overflow.fragments.HomeFragment
+import kotlinx.coroutines.launch
 import java.text.SimpleDateFormat
 import java.time.Clock
 import java.time.LocalTime
@@ -89,12 +91,29 @@ class MainActivity : AppCompatActivity() {
         // Mettre à jour l'heure toutes les secondes
         val updateTimeRunnable = object : Runnable {
             override fun run() {
+                weather()
                 val currentTime = timeFormat.format(Date())
                 timeTextView.text = currentTime
                 handler.postDelayed(this, 1000)
             }
         }
         handler.post(updateTimeRunnable)
+    }
+
+    private fun weather() {
+        val weatherClass = Weather()
+        val weather = findViewById<TextView>(R.id.id_app_weather)
+        // Utiliser une coroutine pour appeler useApi
+        lifecycleScope.launch {
+            val response = weatherClass.useApi()
+            if (response.isNullOrEmpty()) {
+                Toast.makeText(this@MainActivity, "Erreur de connexion", Toast.LENGTH_SHORT).show()
+            } else {
+                // Traiter la réponse ici
+                val weatherMain = weatherClass.getWeather(response)
+                weather.text = weatherMain
+            }
+        }
     }
 
     override fun onDestroy() {

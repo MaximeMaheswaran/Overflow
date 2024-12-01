@@ -10,13 +10,12 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import fr.max.overflow.fragments.HomeFragment
 import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
+import androidx.lifecycle.lifecycleScope
+import kotlinx.coroutines.launch
 
 class MainActivityLogin : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -33,6 +32,8 @@ class MainActivityLogin : AppCompatActivity() {
         navBarListner()
         //login password test
         buttonListner()
+
+
 
 
 
@@ -110,6 +111,7 @@ class MainActivityLogin : AppCompatActivity() {
         // Mettre à jour l'heure toutes les secondes
         val updateTimeRunnable = object : Runnable {
             override fun run() {
+                weather()
                 val currentTime = timeFormat.format(Date())
                 timeTextView.text = currentTime
                 handler.postDelayed(this, 1000)
@@ -118,10 +120,29 @@ class MainActivityLogin : AppCompatActivity() {
         handler.post(updateTimeRunnable)
     }
 
+    private fun weather() {
+        val weatherClass = Weather()
+        val weather = findViewById<TextView>(R.id.id_app_weather)
+        // Utiliser une coroutine pour appeler useApi
+        lifecycleScope.launch {
+            val response = weatherClass.useApi()
+            if (response.isNullOrEmpty()) {
+                Toast.makeText(this@MainActivityLogin, "Erreur de connexion", Toast.LENGTH_SHORT).show()
+            } else {
+                // Traiter la réponse ici
+                val weatherMain = weatherClass.getWeather(response)
+                weather.text = weatherMain
+            }
+        }
+    }
+
     override fun onDestroy() {
         super.onDestroy()
         val handler = Handler(Looper.getMainLooper())
         // Arrêter les mises à jour lorsque l'activité est détruite
         handler.removeCallbacksAndMessages(null)
     }
+
+
+
 }
