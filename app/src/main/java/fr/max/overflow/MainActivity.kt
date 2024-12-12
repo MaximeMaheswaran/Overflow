@@ -11,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import fr.max.overflow.fragments.BasketFragment
 import fr.max.overflow.fragments.HomeFragment
 import kotlinx.coroutines.launch
 import java.text.SimpleDateFormat
@@ -76,6 +77,7 @@ class MainActivity : AppCompatActivity() {
                 }
 
                 else -> {
+                    loadFragment(BasketFragment(this))
                     return@setOnItemSelectedListener false
                 }
             }

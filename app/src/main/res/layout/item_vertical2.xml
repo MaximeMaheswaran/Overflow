@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="63dp"
+        android:layout_height="63dp"
+        android:layout_marginTop="30dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/card_view_item_image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/calvin_klein_white_sweat_02" />
+
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/card_view_item_name"
+        style="@style/item_title_text_style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/item_name"
+        app:layout_constraintStart_toEndOf="@+id/cardView"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/card_view_item_description"
+        style="@style/item_description_text_style"
+        android:layout_width="220dp"
+        android:layout_height="wrap_content"
+        android:text="@string/item_description"
+        app:layout_constraintStart_toStartOf="@+id/card_view_item_name"
+        app:layout_constraintTop_toBottomOf="@+id/card_view_item_name" />
+
+    <TextView
+        android:id="@+id/card_view_item_price"
+        style="@style/item_description_text_style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/item_price"
+        app:layout_constraintStart_toStartOf="@+id/card_view_item_description"
+        app:layout_constraintTop_toBottomOf="@+id/card_view_item_description" />
+
+    <ImageButton
+        android:layout_width="47dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="10dp"
+        android:scaleType="center"
+        android:src="@mipmap/ic_block"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/card_view_item_description"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
