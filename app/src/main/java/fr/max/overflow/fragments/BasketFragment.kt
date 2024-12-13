@@ -24,6 +24,8 @@ class BasketFragment(private val context : MainActivity) : Fragment() {
 
         val itemsListSelect = arrayListOf<ItemModel>()
 
+        val user = context.intent.getIntExtra("user", 0)
+
         itemsList.add(
             ItemModel(
             1,
@@ -58,7 +60,7 @@ class BasketFragment(private val context : MainActivity) : Fragment() {
 
         for (item in itemsList) {
             for (basket in basketList) {
-                if (item.id == basket.idItem) {
+                if (item.id == basket.idItem && basket.idUser == user) {
                     itemsListSelect.add(item)
                 }
             }
