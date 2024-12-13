@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
 import fr.max.overflow.ItemModel
+import fr.max.overflow.ItemRepository.Singleton
 import fr.max.overflow.MainActivity
 import fr.max.overflow.R
 import fr.max.overflow.adapter.ItemAdapter
@@ -18,6 +19,10 @@ class BasketFragment(private val context : MainActivity) : Fragment() {
         val view = inflater.inflate(R.layout.fragment_home, container, false)
 
         val itemsList = arrayListOf<ItemModel>()
+
+        val basketList = MainActivity.Singleton.basketList
+
+        val itemsListSelect = arrayListOf<ItemModel>()
 
         itemsList.add(
             ItemModel(
@@ -51,10 +56,18 @@ class BasketFragment(private val context : MainActivity) : Fragment() {
         )
 
 
+        for (item in itemsList) {
+            for (basket in basketList) {
+                if (item.id == basket.idItem) {
+                    itemsListSelect.add(item)
+                }
+            }
+        }
+
 
         // recuperer le recyclerview
         val verticalRecyclerView = view?.findViewById<RecyclerView>(R.id.vertical_recycler_view)
-        verticalRecyclerView?.adapter = ItemAdapter(context, itemsList, R.layout.item_vertical2)
+        verticalRecyclerView?.adapter = ItemAdapter(context, itemsListSelect, R.layout.item_vertical2)
         verticalRecyclerView?.addItemDecoration(ItemsDecorations())
 
 

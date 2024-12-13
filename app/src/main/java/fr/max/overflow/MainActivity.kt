@@ -23,6 +23,10 @@ import java.util.Locale
 
 class MainActivity : AppCompatActivity() {
 
+    object Singleton {
+        val basketList = arrayListOf<BasketModel>()
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -67,7 +71,7 @@ class MainActivity : AppCompatActivity() {
             when (it.itemId) {
 
                 R.id.action_nav_home -> {
-                    loadActivity(MainActivity(),user,username)
+                    loadFragment(HomeFragment(this))
                     return@setOnItemSelectedListener true
                 }
 
@@ -76,8 +80,12 @@ class MainActivity : AppCompatActivity() {
                     return@setOnItemSelectedListener true
                 }
 
-                else -> {
+                R.id.action_nav_basket -> {
                     loadFragment(BasketFragment(this))
+                    return@setOnItemSelectedListener true
+                }
+
+                else -> {
                     return@setOnItemSelectedListener false
                 }
             }
@@ -124,7 +132,6 @@ class MainActivity : AppCompatActivity() {
         // Arrêter les mises à jour lorsque l'activité est détruite
         handler.removeCallbacksAndMessages(null)
     }
-
 
 
 }

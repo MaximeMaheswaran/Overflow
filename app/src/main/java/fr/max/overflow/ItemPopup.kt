@@ -4,8 +4,10 @@ import android.app.Dialog
 import android.os.Bundle
 import fr.max.overflow.adapter.ItemAdapter
 import android.view.Window
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 
 class ItemPopup(private val adapter: ItemAdapter, private val currentItem: ItemModel) : Dialog(adapter.context) {
 
@@ -16,6 +18,7 @@ class ItemPopup(private val adapter: ItemAdapter, private val currentItem: ItemM
         requestWindowFeature(Window.FEATURE_NO_TITLE)
         setContentView(R.layout.popup_item_detail)
         setupComponents()
+
     }
 
     private fun setupComponents() {
@@ -39,8 +42,18 @@ class ItemPopup(private val adapter: ItemAdapter, private val currentItem: ItemM
         //actualiser le prix du produit
         findViewById<TextView>(R.id.popup_item_price).text = currentItem.price.toString()
 
-
-
+        findViewById<Button>(R.id.popup_item_button_add).setOnClickListener{
+            Toast.makeText(context, "Ajouté au panier", Toast.LENGTH_SHORT).show()
+            val user = adapter.context.intent.getIntExtra("user", 0)
+            MainActivity.Singleton.basketList.add(
+                BasketModel(
+                    user,
+                    currentItem.id
+                )
+            )
+        }
     }
+
+
 
 }

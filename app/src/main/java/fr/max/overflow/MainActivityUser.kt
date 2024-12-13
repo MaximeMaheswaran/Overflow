@@ -16,6 +16,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.lifecycle.lifecycleScope
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import fr.max.overflow.fragments.BasketFragment
 import kotlinx.coroutines.launch
 import java.text.SimpleDateFormat
 import java.util.Locale
@@ -78,6 +79,11 @@ class MainActivityUser : AppCompatActivity() {
 
                 R.id.action_nav_user ->{
                     loadActivity(MainActivityUser(),user,username.toString())
+                    return@setOnItemSelectedListener true
+                }
+
+                R.id.action_nav_basket -> {
+                    loadActivity(MainActivity(),user,username.toString())
                     return@setOnItemSelectedListener true
                 }
 

@@ -30,35 +30,25 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
         android:text="@string/item_name"
         app:layout_constraintStart_toEndOf="@+id/cardView"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/cardView"
         tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/card_view_item_description"
         style="@style/item_description_text_style"
-        android:layout_width="220dp"
+        android:layout_width="210dp"
         android:layout_height="wrap_content"
         android:text="@string/item_description"
         app:layout_constraintStart_toStartOf="@+id/card_view_item_name"
         app:layout_constraintTop_toBottomOf="@+id/card_view_item_name" />
 
-    <TextView
-        android:id="@+id/card_view_item_price"
-        style="@style/item_description_text_style"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/item_price"
-        app:layout_constraintStart_toStartOf="@+id/card_view_item_description"
-        app:layout_constraintTop_toBottomOf="@+id/card_view_item_description" />
-
     <ImageButton
+        android:id="@+id/card_view_item_button_delete"
         android:layout_width="47dp"
         android:layout_height="43dp"
         android:layout_marginTop="40dp"
-        android:layout_marginEnd="10dp"
         android:scaleType="center"
         android:src="@mipmap/ic_block"
         app:layout_constraintEnd_toEndOf="parent"

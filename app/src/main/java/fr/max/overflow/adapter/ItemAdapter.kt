@@ -5,9 +5,12 @@ import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import fr.max.overflow.ItemModel
 import fr.max.overflow.ItemPopup
@@ -21,6 +24,7 @@ class ItemAdapter(val context : MainActivity, private val unItemsList: List<Item
         val itemImage : ImageView? = view.findViewById<ImageView>(R.id.card_view_item_image)
         val itemName = view.findViewById<TextView>(R.id.card_view_item_name)
         val itemDescription = view.findViewById<TextView>(R.id.card_view_item_description)
+        val itemButtonDelete = view.findViewById<ImageButton>(R.id.card_view_item_button_delete)
 
     }
 
@@ -57,6 +61,7 @@ class ItemAdapter(val context : MainActivity, private val unItemsList: List<Item
             context.startActivity(intent)*/
 
         }
+
 
     }
 }

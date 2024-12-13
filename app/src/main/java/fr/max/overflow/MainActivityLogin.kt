@@ -10,11 +10,13 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
 import androidx.lifecycle.lifecycleScope
+import fr.max.overflow.fragments.BasketFragment
 import kotlinx.coroutines.launch
 
 class MainActivityLogin : AppCompatActivity() {
@@ -76,6 +78,13 @@ class MainActivityLogin : AppCompatActivity() {
         startActivity(intent)
     }
 
+    private fun loadFragment(fragment: Fragment) {
+        val transaction = supportFragmentManager.beginTransaction()
+        transaction.replace(R.id.fragment_container_home, fragment)
+        transaction.addToBackStack(null)
+        transaction.commit()
+    }
+
     private fun navBarListner() {
         // Ecouter la bar de navigation
         val user = intent.getIntExtra("user", 0)
@@ -94,6 +103,12 @@ class MainActivityLogin : AppCompatActivity() {
                     loadActivity(MainActivityUser(),user,username.toString())
                     return@setOnItemSelectedListener true
                 }
+
+                R.id.action_nav_basket -> {
+                    loadActivity(MainActivity(),user,username.toString())
+                    return@setOnItemSelectedListener true
+                }
+
 
                 else -> {
                     return@setOnItemSelectedListener false

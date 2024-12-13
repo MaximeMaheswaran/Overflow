@@ -18,6 +18,7 @@ class HomeFragment(private val context : MainActivity) : Fragment(){
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val view = inflater.inflate(R.layout.fragment_home, container, false)
 
+
         val itemsList = arrayListOf<ItemModel>()
 
         itemsList.add(ItemModel(
@@ -44,6 +45,9 @@ class HomeFragment(private val context : MainActivity) : Fragment(){
             120,
             48
         ))
+
+
+
 
 
 
