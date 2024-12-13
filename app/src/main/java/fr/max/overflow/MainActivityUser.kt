@@ -1,22 +1,15 @@
 package fr.max.overflow
-import java.util.Calendar;
-import java.util.Date;
+import java.util.Date
 import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
-import android.provider.Settings.Global.putString
-import android.widget.Button
-import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import androidx.lifecycle.lifecycleScope
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import fr.max.overflow.fragments.BasketFragment
 import kotlinx.coroutines.launch
 import java.text.SimpleDateFormat
 import java.util.Locale
@@ -39,6 +32,7 @@ class MainActivityUser : AppCompatActivity() {
 
     }
 
+    // Fonction pour vérifier l'utilisateur
     private fun verifUser() {
         val user = intent.getIntExtra("user", 0)
         if (user == 0) {
@@ -46,6 +40,7 @@ class MainActivityUser : AppCompatActivity() {
         }
     }
 
+    // Fonction pour mettre à jour le texte de l'utilisateur
     private fun setTextUser() {
         val username = intent.getStringExtra("username")
         val textView = findViewById<TextView>(R.id.user_text_view)
@@ -55,6 +50,7 @@ class MainActivityUser : AppCompatActivity() {
         }
     }
 
+    // Fonction pour charger une nouvelle activité
     private fun loadActivity(activity: AppCompatActivity, user: Int, username: String) {
         val intent = Intent(this, activity::class.java)
         intent.putExtra("user", user)
@@ -63,6 +59,7 @@ class MainActivityUser : AppCompatActivity() {
         startActivity(intent)
     }
 
+    // Fonction pour gérer les clics sur la navigation de la barre de navigation
     private fun navBarListner() {
         // Ecouter la bar de navigation
         val user = intent.getIntExtra("user", 0)
@@ -96,6 +93,7 @@ class MainActivityUser : AppCompatActivity() {
 
     }
 
+    // Fonction pour mettre à jour l'heure
     private fun startClock() {
         val timeTextView = findViewById<TextView>(R.id.id_app_timer)
         val handler = Handler(Looper.getMainLooper())
@@ -112,6 +110,7 @@ class MainActivityUser : AppCompatActivity() {
         handler.post(updateTimeRunnable)
     }
 
+    // Fonction pour obtenir la météo
     private fun weather() {
         val weatherClass = Weather()
         val weather = findViewById<TextView>(R.id.id_app_weather)
@@ -128,6 +127,7 @@ class MainActivityUser : AppCompatActivity() {
         }
     }
 
+    // Fonction appelée lorsque l'activité est détruite
     override fun onDestroy() {
         super.onDestroy()
         val handler = Handler(Looper.getMainLooper())

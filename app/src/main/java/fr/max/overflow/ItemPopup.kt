@@ -42,10 +42,13 @@ class ItemPopup(private val adapter: ItemAdapter, private val currentItem: ItemM
         //actualiser le prix du produit
         findViewById<TextView>(R.id.popup_item_price).text = currentItem.price.toString()
 
+        //ecouter le bouton ajouter au panier
         findViewById<Button>(R.id.popup_item_button_add).setOnClickListener{
             Toast.makeText(context, "Ajouté au panier", Toast.LENGTH_SHORT).show()
             val user = adapter.context.intent.getIntExtra("user", 0)
+            //ajouter le produit au panier
             MainActivity.Singleton.basketList.add(
+                //instancier un item panier
                 BasketModel(
                     user,
                     currentItem.id

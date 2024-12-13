@@ -1,18 +1,13 @@
 package fr.max.overflow.adapter
 
-import android.annotation.SuppressLint
-import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import android.widget.ImageButton
 import android.widget.ImageView
-import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
-import fr.max.overflow.BasketModel
 import fr.max.overflow.ItemModel
 import fr.max.overflow.ItemPopup
 import fr.max.overflow.MainActivity
@@ -60,7 +55,7 @@ class ItemAdapter(val context : MainActivity, private val unItemsList: List<Item
 
         }
 
-
+        //ecouter le bouton supprimer du panier
         holder.itemButtonDelete.setOnClickListener{
             Toast.makeText(context, "Supprimé du panier", Toast.LENGTH_SHORT).show()
 

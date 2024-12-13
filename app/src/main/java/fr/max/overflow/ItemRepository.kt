@@ -1,7 +1,5 @@
 package fr.max.overflow
-import android.content.ContentValues.TAG
-import android.util.Log
-import androidx.recyclerview.widget.AsyncListUtil.DataCallback
+
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase

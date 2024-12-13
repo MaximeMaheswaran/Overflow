@@ -2,7 +2,6 @@ package fr.max.overflow
 
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
-import android.widget.Toast
 import org.json.JSONObject
 import java.net.URL
 

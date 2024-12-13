@@ -15,9 +15,6 @@ import fr.max.overflow.fragments.BasketFragment
 import fr.max.overflow.fragments.HomeFragment
 import kotlinx.coroutines.launch
 import java.text.SimpleDateFormat
-import java.time.Clock
-import java.time.LocalTime
-import java.util.Calendar
 import java.util.Date
 import java.util.Locale
 
@@ -47,6 +44,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    // Fonction pour charger un fragment
     private fun loadFragment(fragment: Fragment) {
         val transaction = supportFragmentManager.beginTransaction()
         transaction.replace(R.id.fragment_container_home, fragment)
@@ -54,6 +52,7 @@ class MainActivity : AppCompatActivity() {
         transaction.commit()
     }
 
+    // Fonction pour charger une nouvelle activité
     private fun loadActivity(activity: AppCompatActivity, user: Int, username: String) {
         val intent = Intent(this, activity::class.java)
         intent.putExtra("user", user)
@@ -62,6 +61,7 @@ class MainActivity : AppCompatActivity() {
         startActivity(intent)
     }
 
+    // Fonction pour gérer les clics sur la navigation de la barre de navigation
     private fun navBarListner(user: Int, username: String) {
         // Ecouter la bar de navigation
 
@@ -94,6 +94,7 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+    // Fonction pour mettre à jour l'heure
     private fun startClock() {
         val timeTextView = findViewById<TextView>(R.id.id_app_timer)
         val handler = Handler(Looper.getMainLooper())
@@ -110,6 +111,7 @@ class MainActivity : AppCompatActivity() {
         handler.post(updateTimeRunnable)
     }
 
+    // Fonction pour obtenir la météo
     private fun weather() {
         val weatherClass = Weather()
         val weather = findViewById<TextView>(R.id.id_app_weather)
@@ -126,6 +128,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    // Fonction appelée lorsque l'activité est détruite
     override fun onDestroy() {
         super.onDestroy()
         val handler = Handler(Looper.getMainLooper())

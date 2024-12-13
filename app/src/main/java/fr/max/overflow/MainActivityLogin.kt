@@ -10,13 +10,11 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.fragment.app.Fragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
 import androidx.lifecycle.lifecycleScope
-import fr.max.overflow.fragments.BasketFragment
 import kotlinx.coroutines.launch
 
 class MainActivityLogin : AppCompatActivity() {
@@ -35,12 +33,9 @@ class MainActivityLogin : AppCompatActivity() {
         //login password test
         buttonListner()
 
-
-
-
-
     }
 
+    // Fonction pour gérer les clics sur le bouton de connexion
     private fun  buttonListner() {
         val button = findViewById<Button>(R.id.login_button)
         button.setOnClickListener {
@@ -48,6 +43,7 @@ class MainActivityLogin : AppCompatActivity() {
         }
     }
 
+    // Fonction pour vérifier le login
     private fun verifLogin() {
         val login = findViewById<EditText>(R.id.text_input_login_id)
         val password = findViewById<EditText>(R.id.text_input_login_password)
@@ -58,6 +54,7 @@ class MainActivityLogin : AppCompatActivity() {
         }
     }
 
+    // Fonction pour vérifier l'utilisateur
     private fun verifUser(user: Int, username: String) {
         if (user == 1) {
             val intent = Intent(this, MainActivityUser::class.java)
@@ -70,6 +67,7 @@ class MainActivityLogin : AppCompatActivity() {
         }
     }
 
+    // Fonction pour charger une nouvelle activité
     private fun loadActivity(activity: AppCompatActivity, user: Int, username: String) {
         val intent = Intent(this, activity::class.java)
         intent.putExtra("user", user)
@@ -78,13 +76,7 @@ class MainActivityLogin : AppCompatActivity() {
         startActivity(intent)
     }
 
-    private fun loadFragment(fragment: Fragment) {
-        val transaction = supportFragmentManager.beginTransaction()
-        transaction.replace(R.id.fragment_container_home, fragment)
-        transaction.addToBackStack(null)
-        transaction.commit()
-    }
-
+    // Fonction pour gérer les clics sur la navigation de la barre de navigation
     private fun navBarListner() {
         // Ecouter la bar de navigation
         val user = intent.getIntExtra("user", 0)
@@ -119,6 +111,7 @@ class MainActivityLogin : AppCompatActivity() {
 
     }
 
+    // Fonction pour mettre à jour l'heure
     private fun startClock() {
         val timeTextView = findViewById<TextView>(R.id.id_app_timer)
         val handler = Handler(Looper.getMainLooper())
@@ -135,6 +128,7 @@ class MainActivityLogin : AppCompatActivity() {
         handler.post(updateTimeRunnable)
     }
 
+    // Fonction pour obtenir la météo
     private fun weather() {
         val weatherClass = Weather()
         val weather = findViewById<TextView>(R.id.id_app_weather)
@@ -151,6 +145,7 @@ class MainActivityLogin : AppCompatActivity() {
         }
     }
 
+    // Fonction appelée lorsque l'activité est détruite
     override fun onDestroy() {
         super.onDestroy()
         val handler = Handler(Looper.getMainLooper())
